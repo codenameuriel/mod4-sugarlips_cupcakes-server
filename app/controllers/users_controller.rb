@@ -17,10 +17,11 @@ class UsersController < ApplicationController
 
     def create
         user = User.new(user_params)
+
         if user.save
-            render json: @user 
+            render json: user 
         else
-            render json: { message: 'No user found with that id' }
+            render json: { message: 'User could not be created' }
         end
     end
 
