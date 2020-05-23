@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         if @user.save
             render json:@user 
         else
-            render error:{'error:unable to create user'},status:400
+            render {error:'error:unable to create user'}
         end
     end
 
@@ -25,9 +25,9 @@ class UsersController < ApplicationController
         @user=User.find(params[:id])
         if @user 
             @user.update(user_params)
-            render json:{message:'user succesfilly updates'}, status 200
+            render json:{message:'user succesfilly updates'}
         else
-            render json:{error:'unable to update user'}, status:400
+            render json:{error:'unable to update user'}
         end
     end
 
@@ -35,9 +35,9 @@ class UsersController < ApplicationController
         @user=User.find(params[:id])
         if @user 
             @user.destroy
-            render json:{message:'user succesfilly deleted'}, status 200
+            render json:{message:'user succesfilly deleted'}
         else
-            render json:{error:'unable to delete user'}, status:400
+            render json:{error:'unable to delete user'}
         end
     end
 

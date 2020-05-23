@@ -12,9 +12,9 @@ class CupcakesController < ApplicationController
   def create
     cupcake=Cupcake.new(cupcake_params)
     if cupcake.save
-        render json:cupcake 
+        render json: cupcake 
     else
-        render error:{'error:unable to create cupcake'},status:400
+        render {error:'error:unable to create cupcake'}
     end
   end
 
@@ -22,7 +22,7 @@ class CupcakesController < ApplicationController
     cupcake=Cupcake.find(params[:id])
     if cupcake 
         cupcake.update(cupcake_params)
-        render json:{message:'cupcake succesfully updates'}, status 200
+        render json:{message:'cupcake succesfully updates'}
     else
         render json:{error:'unable to update cupcake'}, status:400
     end
@@ -32,7 +32,7 @@ def delete
     cupcake=Cupcake.find(params[:id])
     if cupcake 
         cupcake.destroy
-        render json:{message:'cupcake succesfilly deleted'}, status 200
+        render json:{message:'cupcake succesfilly deleted'}
     else
         render json:{error:'unable to delete cupcake'}, status:400
     end
