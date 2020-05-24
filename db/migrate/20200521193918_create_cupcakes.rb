@@ -3,7 +3,7 @@ class CreateCupcakes < ActiveRecord::Migration[6.0]
     create_table :cupcakes do |t|
       t.string :name
       t.string :flavor
-      t.integer :price
+      t.float :price
 
       t.timestamps
     end

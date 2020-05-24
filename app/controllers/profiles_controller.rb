@@ -1,4 +1,4 @@
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
 
     def index
         profiles=Profile.all 
@@ -16,7 +16,7 @@ class ProfileController < ApplicationController
         if profile.save
             render json:profile 
         else
-            render error:{'error:unable to create profile'},status:400
+            render {error:'error:unable to create profile'}
         end
     end
 
@@ -24,9 +24,9 @@ class ProfileController < ApplicationController
         profile=Profile.find(params[:id])
         if profile 
             profile.update(profile_params)
-            render json:{message:'profile succesfilly updates'}, status 200
+            render json:{message:'profile succesfilly updates'}
         else
-            render json:{error:'unable to update profile'}, status:400
+            render json:{error:'unable to update profile'}
         end
     end
 
@@ -34,9 +34,9 @@ class ProfileController < ApplicationController
         profile=Profile.find(params[:id])
         if profile 
             profile.destroy
-            render json:{message:'profile succesfilly deleted'}, status 200
+            render json:{message:'profile succesfilly deleted'}
         else
-            render json:{error:'unable to delete profile'}, status:400
+            render json:{error:'unable to delete profile'}
         end
     end
 
