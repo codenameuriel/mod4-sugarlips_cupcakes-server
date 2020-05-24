@@ -15,5 +15,3 @@ redVelvet= Cupcake.create(name:'Red mystery',flavor:"Red Velvet",price:3.00,imag
 mint= Cupcake.create(name:'Minty Fresh',flavor:"Chocolate Mint",price:3.00,image:"https://keeprecipes.com/sites/keeprecipes/files/imagecache/recipe_large/5963_1318906133_0.jpg")
 blueberry= Cupcake.create(name:'Blue Moon',flavor:"Bluebuerry",price:2.00,image:"https://bakerbynature.com/wp-content/uploads/2016/05/untitled-18-of-55-5.jpg")
 iceCream= Cupcake.create(name:'Sugar on snow',flavor:"icecream sundae",price:4.00,image:"https://i.pinimg.com/originals/1b/96/82/1b96820ce8e85845b45440bf35f4ffd9.jpg")
-chocolate= Cupcake.create(name:'chocolate heaven',flavor:"Chocolate",price:3.00,image:"'https://i2.wp.com/lifemadesimplebakes.com/wp-content/uploads/2018/02/Ultimate-Chocolate-Cupcakes-680x680.jpg'")
-chocolate= Cupcake.create(name:'chocolate heaven',flavor:"Chocolate",price:3.00,image:"'https://i2.wp.com/lifemadesimplebakes.com/wp-content/uploads/2018/02/Ultimate-Chocolate-Cupcakes-680x680.jpg'")
