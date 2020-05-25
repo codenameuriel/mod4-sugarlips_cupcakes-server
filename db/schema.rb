@@ -25,19 +25,15 @@ ActiveRecord::Schema.define(version: 2020_05_23_194739) do
   create_table "cupcakes", force: :cascade do |t|
     t.string "name"
     t.string "flavor"
-<<<<<<< HEAD
-    t.integer "price"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-=======
     t.float "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
->>>>>>> 3e9cd8e50e6e66d15456c1de5f4d91ad9bf0e96e
   end
 
-  create_table "profiles", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
     t.string "first_name"
     t.string "last_name"
     t.string "address_1"
@@ -45,16 +41,8 @@ ActiveRecord::Schema.define(version: 2020_05_23_194739) do
     t.string "city"
     t.string "state"
     t.integer "zip_code"
-    t.integer "phone_number"
-    t.integer "credit_card"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
+    t.bigint "phone_number"
+    t.bigint "credit_card"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -16,9 +16,10 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.new(user_params)
+        # byebug
+        user = User.create(user_params)
 
-        if user.save
+        if user
             render json: user 
         else
             render {error:'error:unable to create user'}
@@ -48,6 +49,6 @@ class UsersController < ApplicationController
     private 
 
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.require(:user).permit(:username, :password, :first_name, :last_name, :address_1, :address_2, :city, :state, :zip_code, :phone_number, :credit_card)
     end
 end
