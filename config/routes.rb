@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :profiles
   delete '/carts/remove', to: 'carts#remove'
+  delete '/carts/purchase', to: 'carts#purchase'
   resources :carts
   resources :cupcakes
 end
