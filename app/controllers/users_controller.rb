@@ -37,15 +37,7 @@ class UsersController < ApplicationController
         end
     end
 
-    def update 
-        @user=User.find(params[:id])
-        if @user 
-            @user.destroy
-            render json:{message:'user succesfilly deleted'}
-        else
-            render json:{error:'unable to delete user'}
-        end
-    end
+ 
 
     private 
 
