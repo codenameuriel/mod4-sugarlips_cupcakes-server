@@ -2,13 +2,22 @@ class CartsController < ApplicationController
 
   def show
     cart = Cart.find_by(id: params[:id])
-    render json: cart
+    render json: cart, include: [:cupcake]
   end
 
   def create
     # byebug
     cart = Cart.create(cart_params)
     render json: cart, include: [:cupcake]
+  end
+
+  def remove 
+    # byebug
+    cart = Cart.find do |cart| 
+      cart.user.id == params[:user] && cart.cupcake.id == params[:cupcake]
+    end.destroy
+
+    render json: cart.user.cupcakes
   end
 
   def delete
