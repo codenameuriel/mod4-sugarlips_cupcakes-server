@@ -2,14 +2,14 @@ class UsersController < ApplicationController
 
     def index
         users = User.all 
-        render json: users
+        render json: users, include: [:cupcakes]
     end
 
     def show
         # byebug
         user = User.find_by(username: params[:username])
         if user 
-            render json: user
+            render json: user, include: [:cupcakes]
         else
             render json: { message: 'No user found with that username' }
         end
@@ -20,17 +20,18 @@ class UsersController < ApplicationController
         user = User.create(user_params)
 
         if user
-            render json: user 
+            render json: user, include: [:cupcakes]
         else
             render {error:'error:unable to create user'}
         end
     end
 
     def update 
-        @user=User.find(params[:id])
-        if @user 
-            @user.update(user_params)
-            render json:{message:'user succesfilly updates'}
+        user=User.find(params[:id])
+
+        if user 
+            user.update(user_params)
+            render json: user, include: [:cupcakes]
         else
             render json:{error:'unable to update user'}
         end

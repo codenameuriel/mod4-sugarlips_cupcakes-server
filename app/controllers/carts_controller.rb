@@ -6,8 +6,9 @@ class CartsController < ApplicationController
   end
 
   def create
+    # byebug
     cart = Cart.create(cart_params)
-    render json: cart
+    render json: cart, include: [:cupcake]
   end
 
   def delete
